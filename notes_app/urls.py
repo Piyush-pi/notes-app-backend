@@ -38,7 +38,7 @@ schema_view = get_schema_view(
 
 
 router = DefaultRouter()
-router.register(r'notes', NoteViewSet)
+router.register(r'notes', NoteViewSet, basename='note')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

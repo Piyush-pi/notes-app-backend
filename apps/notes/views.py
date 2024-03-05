@@ -12,7 +12,7 @@ class NoteViewSet(viewsets.ModelViewSet):
     serializer_class = NoteSerializer
 
     def get_queryset(self):
-        queryset = Note.objects.filter(is_delete=False)
+        queryset = Note.objects.filter(is_deleted=False)
         title = self.request.query_params.get('title', None)
         if title is not None:
             queryset = queryset.filter(title=title)
